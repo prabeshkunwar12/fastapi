@@ -3,4 +3,4 @@ compatibility_date = "2024-05-03"
 
 [vars]
 UPSTASH_REDIS_REST_TOKEN = 'AaevASQgMjY2ZTNmMzUtNDE1MC00MjNlLWIyYTAtMWNmZDFkZGE2NjM1Yjc3Y2IyMjkyOGNhNDc1N2FlYzVhY2I3ZjlmOTYzMDI='
-UPSTASH_REDIS_REST_URL = https://us1-proper-mayfly-42927.upstash.io
+UPSTASH_REDIS_REST_URL = 'https://us1-proper-mayfly-42927.upstash.io'
