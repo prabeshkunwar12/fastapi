@@ -1,8 +1,8 @@
 import { Redis } from '@upstash/redis'
 
 const redis = new Redis({
-  url: 'https://us1-proper-mayfly-42927.upstash.io',
-  token: 'AaevASQgMjY2ZTNmMzUtNDE1MC00MjNlLWIyYTAtMWNmZDFkZGE2NjM1Yjc3Y2IyMjkyOGNhNDc1N2FlYzVhY2I3ZjlmOTYzMDI=',
+	url: 'https://us1-proper-mayfly-42927.upstash.io',
+	token: 'AaevASQgMjY2ZTNmMzUtNDE1MC00MjNlLWIyYTAtMWNmZDFkZGE2NjM1Yjc3Y2IyMjkyOGNhNDc1N2FlYzVhY2I3ZjlmOTYzMDI=',
 })
 
 const countryList = [
@@ -255,21 +255,21 @@ const countryList = [
     'Zambia',
     'Zimbabwe',
     'Åland Islands',
-  ]
+]
 
-  countryList.forEach((country)=>{
-    const term = country.toUpperCase()
-    const terms: {score:0, member:string}[] = []
+countryList.forEach((country)=>{
+	const term = country.toUpperCase()
+	const terms: {score:0, member:string}[] = []
 
-    for(let i=0; i<term.length; i++){
-        terms.push({score: 0, member: term.substring(0, i)})
-    }
-    terms.push({score:0, member:term+'*'})
+	for(let i=0; i<term.length; i++){
+		terms.push({score: 0, member: term.substring(0, i)})
+	}
+	terms.push({score:0, member:term+'*'})
 
-    const populateDb = async () => {
-        // @ts-expect-error
-        await  redis.zadd("terms", ...terms)
-    }
+	const populateDb = async () => {
+		// @ts-expect-error
+		await  redis.zadd("terms", ...terms)
+	}
 
-    populateDb()
-  })
+	populateDb()
+})
